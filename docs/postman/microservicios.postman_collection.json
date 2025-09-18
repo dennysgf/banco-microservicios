@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "615899bd-16ae-44ae-9594-61211a16f18c",
+		"name": "microservicios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21881206"
+	},
+	"item": [
+		{
+			"name": "cliente-persona",
+			"item": [
+				{
+					"name": "crear cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"prueba test\",\r\n  \"genero\": \"M\",\r\n  \"edad\": 27,\r\n  \"identificacion\": \"045555666\",\r\n  \"direccion\": \"13 junio y Equinoccial\",\r\n  \"telefono\": \"098874587\",\r\n  \"password\": \"1245\",\r\n  \"estado\": true\r\n}\r\n"
+						},
+						"url": "http://localhost:8080/api/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "obtener por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/clientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar datos",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"prueba actualizado\",\r\n  \"genero\": \"M\",\r\n  \"edad\": 27,\r\n  \"identificacion\": \"045555666\",\r\n  \"direccion\": \"13 junio y Equinoccial\",\r\n  \"telefono\": \"098874587\",\r\n  \"password\": \"1245\",\r\n  \"estado\": true\r\n}"
+						},
+						"url": "http://localhost:8080/api/clientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/clientes/C001"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cuenta-movimiento",
+			"item": [
+				{
+					"name": "Crear Cuenta",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"numeroCuenta\": \"478758\",\n  \"tipoCuenta\": \"Ahorros\",\n  \"saldoInicial\": 2000,\n  \"estado\": true,\n  \"clienteId\": 1\n}\n"
+						},
+						"url": "http://localhost:8081/api/cuentas"
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Depósito",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cuentaId\": 11,\n  \"fecha\": \"2025-09-17T14:00:00\",\n  \"tipoMovimiento\": \"Deposito\",\n  \"valor\": 600\n}\n"
+						},
+						"url": "http://localhost:8081/api/movimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Retiro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cuentaId\": 1,\n  \"fecha\": \"2025-09-17T12:00:00\",\n  \"tipoMovimiento\": \"Retiro\",\n  \"valor\": -6000\n}\n"
+						},
+						"url": "http://localhost:8081/api/movimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "Reporte Estado de Cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/reportes?clienteId=1&fechaInicio=2025-09-01T00:00:00&fechaFin=2025-09-30T23:59:59",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "1"
+								},
+								{
+									"key": "fechaInicio",
+									"value": "2025-09-01T00:00:00"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2025-09-30T23:59:59"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8081/cuentas/123456"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar cuentas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/api/cuentas"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
