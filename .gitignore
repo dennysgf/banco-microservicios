@@ -36,8 +36,8 @@ Thumbs.db
 
 .env
 
-*.postman_collection.json
-*.postman_environment.json
+/postman/*.json
+
 
 
 /out/
