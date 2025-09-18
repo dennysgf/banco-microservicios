@@ -83,7 +83,7 @@ public class ClienteServiceImpl  implements ClienteService{
                 saved.getNombre(),
                 saved.getGenero(),
                 saved.getEdad(),
-                saved.getIdentificacion(), // se conserva la existente
+                saved.getIdentificacion(),
                 saved.getDireccion(),
                 saved.getTelefono(),
                 saved.getEstado()
