@@ -14,6 +14,6 @@ public class MovimientoEventProducer {
 
     public void publishMovimientoRegistrado(MovimientoRegistradoEvent event) {
         kafkaTemplate.send("movimiento-registrado", event);
-        log.info("📤 Evento publicado en 'movimiento-registrado': {}", event);
+        log.info("Evento publicado en 'movimiento-registrado': {}", event);
     }
 }
