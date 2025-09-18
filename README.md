@@ -13,8 +13,8 @@ Cada servicio expone APIs REST documentadas con **Swagger**.
 
 ## Arquitectura
 - **Microservicios**:  
-  - `cliente-persona` (puerto 8081)  
-  - `cuenta-movimiento` (puerto 8082)  
+  - `cliente-persona` (puerto 8080)  
+  - `cuenta-movimiento` (puerto 8081)  
 - **Mensajería**: Apache Kafka  
 - **Bases de datos**:  
   - `clientepersona`  
@@ -101,21 +101,21 @@ docker-compose up --build
 ```
 
 ### 3. Servicios disponibles
-- **Swagger Cliente-Persona** → [http://localhost:8081/swagger-ui/index.html#/](http://localhost:8081/swagger-ui/index.html#/)  
-- **Swagger Cuenta-Movimiento** → [http://localhost:8082/swagger-ui/index.html#/](http://localhost:8082/swagger-ui/index.html#/)  
+- **Swagger Cliente-Persona** → [http://localhost:8080/swagger-ui/index.html#/](http://localhost:8080/swagger-ui/index.html#/)  
+- **Swagger Cuenta-Movimiento** → [http://localhost:8081/swagger-ui/index.html#/](http://localhost:8081/swagger-ui/index.html#/)  
 - **Kafka** → localhost:9092  
 - **PostgreSQL** → localhost:5432  
 
 ---
 
 ##  Endpoints principales
-### Cliente-Persona (`localhost:8081`)
+### Cliente-Persona (`localhost:8080`)
 - `POST /clientes` → Crear cliente  
 - `GET /clientes/{id}` → Consultar cliente  
 - `PUT /clientes/{id}` → Actualizar cliente  
 - `DELETE /clientes/{id}` → Eliminar cliente  
 
-### Cuenta-Movimiento (`localhost:8082`)
+### Cuenta-Movimiento (`localhost:8081`)
 - `POST /cuentas` → Crear cuenta  
 - `GET /cuentas/{id}` → Consultar cuenta  
 - `POST /movimientos` → Registrar movimiento  
