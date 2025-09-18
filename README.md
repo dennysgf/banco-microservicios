@@ -1,6 +1,6 @@
 # Proyecto: Microservicios Cliente-Persona y Cuenta-Movimiento
 
-## 📖 Descripción
+##Descripción
 Este proyecto implementa una arquitectura de **microservicios en Java Spring Boot**, dividida en dos servicios principales:
 
 - **cliente-persona** → gestión de clientes y personas.  
@@ -11,7 +11,7 @@ Cada servicio expone APIs REST documentadas con **Swagger**.
 
 ---
 
-##  Arquitectura
+## Arquitectura
 - **Microservicios**:  
   - `cliente-persona` (puerto 8081)  
   - `cuenta-movimiento` (puerto 8082)  
@@ -85,7 +85,7 @@ Incluye:
 - `cuentas`  
 - `movimientos`  
 
-> ⚠️ Nota: la relación entre `clientes` y `cuentas` es lógica (por eventos Kafka) ya que pertenecen a bases distintas.
+> Nota: la relación entre `clientes` y `cuentas` es lógica (por eventos Kafka) ya que pertenecen a bases distintas.
 
 ---
 
